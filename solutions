@@ -129,3 +129,40 @@ solution.js:
     console.log(Math.PI);
     console.log(Math.sqrt(+arg1));
     console.log(Math.square(+arg2));
+
+6) computed property:
+console.log({
+  [+process.argv[2] % 2 === 0 ? "even" : "odd"]: +process.argv[2],
+  [+process.argv[2] + +process.argv[3]]: +process.argv[2] + +process.argv[3],
+});
+
+7) for of iteration
+const max = +process.argv[2];
+let FizzBuzz = {
+  [Symbol.iterator]() {
+    let num = 1;
+    return {
+      next() {
+        if (num > max) {
+          return { done: true };
+        }
+        let value = num;
+        if (value % 15 === 0) {
+          value = 'FizzBuzz';
+        } else if (value % 3 === 0) {
+          value = 'Fizz';
+        } else if (value % 5 === 0) {
+          value = 'Buzz';
+        }
+        num++;
+        return { done: false, value: value };
+      }
+    }
+  }
+}
+
+for (var n of FizzBuzz) {
+  console.log(n);
+}
+
+8) 

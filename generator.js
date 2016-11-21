@@ -1,28 +1,23 @@
 const max = process.argv[2];
-    let FizzBuzz = {
-      [Symbol.iterator]() {
-          let count = 1;
-          return {
-              next() {
-                  let num = count;
-                  if(num > max) {
-                      return { done: true, value: num };
-                  }
-                  else if(num % 3 === 0 && num % 5 === 0) {
-                     num = "FizzBuzz";
+    let FizzBuzz = function*(){
+          let num = 1;
+              while(num <= max) {
+                  if(num % 3 === 0 && num % 5 === 0) {
+                     yield "FizzBuzz";
                   }
                   else if(num % 3 === 0) {
-                     num = "Fizz";
+                     yield "Fizz";
                   }
                   else if(num % 5 === 0) {
-                      num = "Buzz";
-                    }
-                    count++;
-                    return { done: false, value: num };
+                      yield "Buzz";
                   }
+                 else {
+                     yield num;
+                 }
+                 num++;
+                }
               }
-          }
-      }
+          ();
         // here belongs the FizzBuzz logic
         // Hint：
         // When it's finished you have to return an object
