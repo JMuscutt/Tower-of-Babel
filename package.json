@@ -1,0 +1,24 @@
+{
+  "name": "babeltower",
+  "version": "1.0.0",
+  "description": "Learning Babel for class.",
+  "main": "Math.js",
+  "dependencies": {},
+  "devDependencies": {
+    "babel-cli": "^6.18.0"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": ".\\node_modules\\.bin\\babel --presets es2015 -d lib"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JMuscutt/Tower-of-Babel.git"
+  },
+  "author": "Jarred Muscutt",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/JMuscutt/Tower-of-Babel/issues"
+  },
+  "homepage": "https://github.com/JMuscutt/Tower-of-Babel#readme"
+}
